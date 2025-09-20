@@ -1,0 +1,232 @@
+/*
+ * Basistyle für die Bar & Lounge Interlaken Website
+ *
+ * Diese CSS-Datei bestimmt das Erscheinungsbild der Webseite. Sie nutzt
+ * moderne Layout‑Techniken wie Flexbox und CSS Grid, um eine ansprechende
+ * und reaktionsfähige Gestaltung zu ermöglichen. Die Farbpalette ist
+ * warm und einladend, mit dunklen Akzenten für die Navigation und das
+ * Footer sowie hellen Flächen für den Inhalt.
+ */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+  background-color: #f7f4f1;
+  color: #333;
+}
+
+/* Navigationsleiste */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+header .nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 20px;
+}
+
+header .logo {
+  color: #fff;
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+header nav ul li {
+  margin-left: 20px;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300;
+  transition: color 0.3s ease;
+  font-size: 16px;
+}
+
+header nav ul li a:hover {
+  color: #c59d5f;
+}
+
+/* Hero Bereich */
+.hero {
+  height: 100vh;
+  background-image: url('images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Überlagerung für bessere Lesbarkeit */
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
+  max-width: 90%;
+}
+
+.hero-overlay h1 {
+  font-size: 42px;
+  margin: 0;
+}
+
+.hero-overlay p {
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+/* Allgemeine Abschnittsformatierung */
+section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 32px;
+  color: #333;
+  position: relative;
+}
+
+/* Über uns */
+.about p {
+  line-height: 1.6;
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Angebot (Menu) */
+.menu-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.menu-item {
+  flex: 1 1 250px;
+  background-color: #fff;
+  padding: 25px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item h3 {
+  margin-top: 0;
+  color: #b38b4c;
+  font-size: 22px;
+}
+
+.menu-item p {
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+/* Galerie */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Kontakt */
+.contact p {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+.contact a {
+  color: #b38b4c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact a:hover {
+  color: #8c6b36;
+}
+
+/* Footer */
+footer {
+  background-color: #1a1a1a;
+  color: #ccc;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+  header .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  header nav ul {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+  header nav ul li {
+    margin: 10px 0;
+  }
+  .hero-overlay h1 {
+    font-size: 32px;
+  }
+  .hero-overlay p {
+    font-size: 18px;
+  }
+  .menu-item {
+    flex: 1 1 100%;
+  }
+}
